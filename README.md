@@ -1,4 +1,4 @@
-<h1 align="center">Machine Learning Code</h1>
+<h1 align="center">Machine Learning</h1>
 
 <div align="center">
   <div>
