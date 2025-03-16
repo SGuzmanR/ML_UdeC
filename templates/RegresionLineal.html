@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/globals.css') }}">
+  <title>Regresion Lineal | Machine Learning</title>
+</head>
+<body>
+  <header class="header-section">
+    <nav class="nav-section">
+      <a href="{{ url_for('home')}}" class="nav-item">Volver a Inicio</a>
+    </nav>
+  </header>
+
+  <main class="RL">
+    <section class="main">
+      <h1 class="title">Modelo Regresion Lineal con Dataset Asignado</h1>
+      <p class="subtitle">Utilizando el Dataset asignado (Ventas - Presupuesto en public), tiene dos columnas (X: Variable Independiente, Y: Variable Dependiente), el propósito es predecir Y a partir de X utilizando la Regresión Lineal.</p>
+      <p class="subtitle">El uso de la Regresión Lineal es ideal en este contexto, ya que hay una relación lineal entre ambas variables, este es útil cuando se quiere modelar la relación entre una variable dependiente y otra independiente.</p>
+    </section>
+
+    <section class="RL-items">
+      <div class="RL-item">
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Gráfico de Regresión">
+      </div>
+    </section>
+  </main>
+</body>
+</html>

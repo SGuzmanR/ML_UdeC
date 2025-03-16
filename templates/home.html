@@ -12,12 +12,39 @@
       <nav class="nav">
         <a href="{{ url_for('home') }}" class="nav-item">Inicio</a>
         <a href="{{ url_for('CasoUsoMLSupervisado') }}" class="nav-item">Caso Uso MLS</a>
+        <a href="{{ url_for('RegresionLineal') }}" class="nav-item">Regresion Lineal</a>
       </nav>
+
+      <div class="hm" onclick="handleNav()">
+        Abrir Menu
+      </div>
+
+      <div class="mobile-nav" id="mobile-nav">
+        <a class="mobile-nav_item" onclick="handleNav()">Cerrar Menu</a>
+
+        <div>
+          <a href="{{ url_for('home') }}" class="mobile-nav_item">Inicio</a>
+          <a href="{{ url_for('CasoUsoMLSupervisado') }}" class="mobile-nav_item">Caso Uso MLS</a>
+          <a href="{{ url_for('RegresionLineal') }}" class="mobile-nav_item">Regresion Lineal</a>
+        </div>
+      </div>
     </header>
     
     <main class="home">
       <h1>Machine Learning</h1>
       <p>Sergio Guzman</p>
     </main>
+
+    <script>
+      function handleNav() {
+        const mobileNav = document.getElementById('mobile-nav');
+
+        if (mobileNav.style.top === '0%') {
+          mobileNav.style.top = '-100%';
+        } else {
+          mobileNav.style.top = '0%';
+        }
+      }
+    </script>
   </body>
 </html>

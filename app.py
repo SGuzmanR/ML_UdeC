@@ -1,8 +1,15 @@
-import re
-from datetime import datetime
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+import io
+import os
+import base64
+import pandas as pd
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
 
 app = Flask(__name__)
+IMG_DIR = "static/images"
 
 @app.route("/")
 def home():
@@ -27,3 +34,37 @@ def CasoUsoMLSupervisado():
     'CasoUsoMLSupervisado.html', 
     investigationCU=investigationCU
   )
+
+@app.route("/RegresionLineal", methods=["POST", "GET"])
+def RegresionLineal():
+    file_path = "data/RegresionLineal.csv"
+    img_filename = "regresion_lineal.png"
+
+    img_path = os.path.join(IMG_DIR, img_filename)
+
+    if not os.path.exists(img_path):
+      df = pd.read_csv(file_path)
+      x = df[['X']]
+      y = df['Y']
+
+      model = LinearRegression()
+      model.fit(x, y)
+
+      img = io.BytesIO()
+      plt.scatter(x, y, color="blue", label="Datos Reales")
+      plt.plot(x, model.predict(x), color="red", label="Linea de Regresion")
+      plt.title("Regresion Lineal Ventas")
+      plt.xlabel("X")
+      plt.ylabel("Y")
+      plt.legend()
+
+      plt.savefig(img_path)
+      plt.close()
+    
+    with open(img_path, "rb") as img_file:
+      plot_url = base64.b64encode(img_file.read()).decode('utf8')
+
+    return render_template (
+      'RegresionLineal.html',
+      plot_url = plot_url
+    )
