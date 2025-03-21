@@ -12,7 +12,7 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #fafaff;
+  background-color: #fff;
   color: #353535;
   overflow-x: hidden;
   width: 100%;
@@ -32,7 +32,7 @@ ul {
 .title {
   text-align: center;
   background-color: #353535;
-  color: #fafaff;
+  color: #fff;
   padding: 10px 10px;
   width: 100%;
 }
@@ -48,7 +48,7 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 30px;
   width: 100%;
 }
 
@@ -101,7 +101,7 @@ ul {
 
 .nav-item:hover {
   background-color: #353535;
-  color: #fafaff;
+  color: #fff;
   border-radius: 5px;
 }
 
@@ -117,7 +117,7 @@ ul {
 
 .hm:hover {
   background-color: #353535;
-  color: #fafaff;
+  color: #fff;
   border-radius: 5px;
 }
 
@@ -150,12 +150,12 @@ ul {
   transition-duration: 300ms;
   border-radius: 5px;
   text-wrap: nowrap;
-  color: #fafaff;
+  color: #fff;
   cursor: pointer;
 }
 
 .mobile-nav_item:hover {
-  background-color: #fafaff;
+  background-color: #fff;
   color: #353535;
   border-radius: 5px;
 }
@@ -191,7 +191,7 @@ ul {
   z-index: 10;
   font-size: 25px;
   background-color: #353535;
-  color: #fafaff;
+  color: #fff;
   padding: 10px 20px;
   width: 100%;
   text-align: end;
@@ -266,6 +266,25 @@ ul {
 }
 
 .RL-item img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* RLg */
+.RLg-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.RLg-item {
+  width: 100%;
+  height: 60vh;
+}
+
+.RLg-item iframe {
   width: 100%;
   object-fit: contain;
 }

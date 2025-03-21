@@ -68,3 +68,7 @@ def RegresionLineal():
       'RegresionLineal.html',
       plot_url = plot_url
     )
+
+@app.route("/RegresionLogistica")
+def RegresionLogistica():
+  return render_template ('RegresionLogistica.html')

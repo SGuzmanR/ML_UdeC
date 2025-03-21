@@ -1,44 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/globals.css') }}">
-  <title>Caso Uso Supervisado | Machine Learning</title>
-</head>
-<body>
-  <header class="header-section">
-    <nav class="nav-section">
-      <a href="{{ url_for('home')}}" class="nav-item">Volver a Inicio</a>
-    </nav>
-  </header>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/globals.css') }}">
+    <title>Caso Uso Supervisado | Machine Learning</title>
+  </head>
+  
+  <body>
+    <header class="header-section">
+      <nav class="nav-section">
+        <a href="{{ url_for('home')}}" class="nav-item">Volver a Inicio</a>
+      </nav>
+    </header>
 
-  <main class="CUS">
-    <section class="main">
-      <h1 class="title">{{ investigationCU['title'] }}</h1>
-      <p class="subtitle">{{ investigationCU['subtitle'] }}</p>
-    </section>
+    <main class="CUS">
+      <section class="main">
+        <h1 class="title">{{ investigationCU['title'] }}</h1>
+        <p class="subtitle">{{ investigationCU['subtitle'] }}</p>
+      </section>
 
-    <section class="CUS-items">
-      <div class="CUS-item1">
-        <h2>Problema</h2>
-        <p>{{ investigationCU['problem'] }}</p>
-      </div>
+      <section class="CUS-items">
+        <div class="CUS-item1">
+          <h2>Problema</h2>
+          <p>{{ investigationCU['problem'] }}</p>
+        </div>
 
-      <div class="CUS-item2">
-        <h2>Solucion</h2>
-        <p>{{ investigationCU['solution'] }}</p>
-      </div>
+        <div class="CUS-item2">
+          <h2>Solucion</h2>
+          <p>{{ investigationCU['solution'] }}</p>
+        </div>
 
-      <div class="CUS-item2">
-        <h2>Beneficios</h2>
-        <ul>
-          {% for benefit in investigationCU['benefits'] %}
-            <li>{{ benefit }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    </section>
-  </main>
-</body>
+        <div class="CUS-item2">
+          <h2>Beneficios</h2>
+          <ul>
+            {% for benefit in investigationCU['benefits'] %}
+              <li>{{ benefit }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

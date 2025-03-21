@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/globals.css') }}">
+    <title>Regresion Logistica | Machine Learning</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  </head>
+
+  <body>
+    <header class="header-section">
+      <nav class="nav-section">
+        <a href="{{ url_for('home')}}" class="nav-item">Volver a Inicio</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="main">
+        <h1 class="title">Regresion Logística</h1>
+        <p class="subtitle">Es un modelo estadístico utilizado para predecir el resultado de una variable dependientes binaria o categórica basada en una o más variables independientes. Predice probabilidades y usa la función logística (Sigmoide) para comprimir estas probabilidades entre 0 y 1. </p>
+        <p class="subtitle">
+          P(y = 1 | X) = 
+          \(\frac{1}{1 + e^{-(\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n)}}\)
+        </p>
+      </section>
+
+      <section class="RLg-items">
+        <div class="RLg-item">
+          <iframe 
+            width="100%" 
+            height="100%" 
+            frameBorder="0" 
+            src="https://www.mindmeister.com/maps/public_map_shell/3658277666/regresi-n-log-stica?width=600&height=400&z=auto&no_share=1" 
+            scrolling="no" 
+            style="overflow:hidden;margin-bottom:5px"
+          >
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
