@@ -16,27 +16,28 @@
 
     <main class="CUS">
       <section class="main">
-        <h1 class="title">{{ investigationCU['title'] }}</h1>
-        <p class="subtitle">{{ investigationCU['subtitle'] }}</p>
+        <h1 class="title">Investigacion Caso de Uso Machine Learning Supervisado</h1>
+        <p class="subtitle">Caso de Éxito: Spotify</p>
       </section>
 
       <section class="CUS-items">
         <div class="CUS-item1">
           <h2>Problema</h2>
-          <p>{{ investigationCU['problem'] }}</p>
+          <p>En la industria de la musica, se necesita proporcionar recomendaciones personalizadas, ya que es crucial para que el usuario tenga una experiencia completa y personalizada.</p>
         </div>
 
         <div class="CUS-item2">
           <h2>Solucion</h2>
-          <p>{{ investigationCU['solution'] }}</p>
+          <p>Con K-Nearest Neighbors (KNN), y usando ML Supervisado, se logra predecir que canciones y artistas les gustarian a los usuarios.</p>
         </div>
 
         <div class="CUS-item2">
           <h2>Beneficios</h2>
           <ul>
-            {% for benefit in investigationCU['benefits'] %}
-              <li>{{ benefit }}</li>
-            {% endfor %}
+            <li>Personalizacion Avanzada.</li>
+            <li>Mayor retencion de usuarios.</li>
+            <li>Descubrimiento de nuevos artistas y generos.</li>
+            <li>Mejores decisiones comerciales.</li>
           </ul>
         </div>
       </section>
