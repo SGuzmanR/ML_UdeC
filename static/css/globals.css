@@ -52,7 +52,6 @@ ul {
   width: 100%;
 }
 
-/* NAV */
 .header-section {
   display: flex;
   flex-direction: column;
@@ -72,13 +71,16 @@ ul {
   gap: 12px;
 }
 
+/* NAV */
 .header {
   display: flex;
+  position: fixed;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 8vh;
+  z-index: 50;
 }
 
 .nav {
@@ -87,6 +89,7 @@ ul {
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100%;
   padding: 0px 200px;
   gap: 12px;
 }
@@ -125,10 +128,10 @@ ul {
   display: flex;
   position: absolute;
   justify-content: space-between;
-  padding: 20vh 0px;
+  padding: 100px 0px;
   align-items: center;
   flex-direction: column-reverse;
-  top: -100%;
+  top: -100vh;
   width: 100%;
   height: 100vh;
   background-color: #353535;
@@ -177,7 +180,7 @@ ul {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 92vh;
+  height: 100vh;
   gap: 2px;
 }
 
