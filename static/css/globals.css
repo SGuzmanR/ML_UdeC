@@ -290,3 +290,23 @@ ul {
   width: 100%;
   object-fit: contain;
 }
+
+/* IRLg */
+.IRLs-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.IRLs-item img {
+  width: 50%;
+}
+
+@media (max-width: 500px) {
+  .IRLs-item img {
+    width: 80%;
+  }
+}

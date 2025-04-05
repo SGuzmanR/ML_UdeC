@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/globals.css') }}">
+    <title>Implementación Regresion Logistica | Machine Learning</title>
+  </head>
+
+  <body>
+    <header class="header-section">
+      <nav class="nav-section">
+        <a href="{{ url_for('home')}}" class="nav-item">Volver a Inicio</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="main-header">
+        <h1 class="title">Implementación Regresion Logistica</h1>
+        <p class="subtitle">Tomando el Dataset de Finanzas con las variables numéricas (X, Y). Para poder implementar la Regresión Logística, necesitamos una variable categórica como objetivo y variables numéricas, teniendo esto en cuenta, tenemos que convertir Y en una variable binaria compatible con el modelo de clasificación.</p>
+        <p class="subtitle">La Regresión Logística se basa en la probabilidad de que un evento ocurra dado un conjunto de variables independientes. 
+        Para la división del dataset, se utiliza train_test_split de Scikit-learn, que divide los datos en dos subconjuntos, uno para entrenar el modelo y otro para evaluar su desempeño. </p>
+      </section>
+
+      <section class="IRLs-item">
+        <img src="data:image/png;base64,{{ confusion_img }}" alt="Gráfico de Regresión">
+      </section>
+    </main>
+  </body>
+</html>
