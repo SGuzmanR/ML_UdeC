@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, g
 from RegresionLineal import performRegression
 from RegresionLogistica import performLogisticRegression
+from DB import getDB, close_db
 
 app = Flask(__name__)
+app.secret_key = "root"
 
 @app.route("/")
 def home():
@@ -21,7 +23,7 @@ def RegresionLineal():
   return render_template (
     'RegresionLineal.html',
     plot_url = plot_url
-  )
+  ) 
 
 @app.route("/RegresionLogistica")
 def RegresionLogistica():
@@ -35,3 +37,16 @@ def ImplementacionRLogistica():
     'ImplementacionRLogistica.html',
     confusion_img = confusion_img
   )
+
+@app.route("/ModelosML")
+def ModelosML():
+  data = getDB()
+
+  return render_template (
+    'ModelosML.html', 
+    data = data
+  )
+
+@app.teardown_appcontext
+def teardown(exception):
+  close_db(exception)

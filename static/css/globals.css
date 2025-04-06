@@ -310,3 +310,124 @@ ul {
     width: 80%;
   }
 }
+
+/* Modelos ML */
+.ModelosML_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100vw;
+  height: 100%;
+}
+
+.ModelosML {
+  display: flex;
+  flex-grow: 1;
+  height: 70vh;
+  width: 100%;
+}
+
+.ModelosML_sidebar {
+  width: 25%;
+  height: 100%;
+  padding: 20px;
+  border-right: 2px solid #353535;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+}
+
+.ModelosML_sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ModelosML_sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.ModelosML_sidebar ul li a {
+  color: #353535;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.ModelosML_sidebar ul li a:hover {
+  background-color: #353535;
+  color: #fff;
+}
+
+.ModelosML_content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #fff;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 75%;
+  transition: all 0.3s ease-in-out;
+}
+
+.ModelosML_content-details {
+  display: none;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  gap: 15px;
+  justify-content: start;
+  align-items: start;
+}
+
+.ModelosML_content-details h2 {
+  font-size: 20px;
+  color: #353535;
+}
+
+.ModelosML_content-details a {
+  font-size: 1vw;
+}
+
+.ModelosML_content-details a:hover {
+  text-decoration: underline;
+}
+
+.ModelosML_content-details p {
+  font-size: 16px;
+  color: #353535;
+}
+
+.ModelosML_content-details img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 770px) {
+  .ModelosML_main {
+    flex-direction: column;
+  }
+  
+  .ModelosML_sidebar {
+    flex-direction: row;
+    width: 100%;
+    flex-grow: inherit;
+  }
+
+  .ModelosML {
+    flex-direction: column;
+    flex-grow: inherit;
+    width: 100%;
+  }
+
+  .ModelosML_content {
+    flex-direction: column;
+    width: 100%;
+  }
+}

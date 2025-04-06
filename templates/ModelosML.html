@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/globals.css') }}">
+    <title>Modelos ML | Machine Learning</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+    <script type="text/javascript">
+      function toggleDetails(modelId) {
+        var details = document.getElementById("ModelosML_content-details-" + modelId);
+        var contentArea = document.getElementById("ModelosML_content");
+
+        var allDetails = document.querySelectorAll('.ModelosML_content-details');
+        allDetails.forEach(function(detail) {
+          detail.style.display = 'none';
+        });
+
+        if (details.style.display === "none" || details.style.display === "") {
+          details.style.display = "flex";
+          contentArea.scrollIntoView({behavior: "smooth"});
+        } else {
+          details.style.display = "none";
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <header class="header-section">
+      <nav class="nav-section">
+        <a href="{{ url_for('home') }}" class="nav-item">Volver a Inicio</a>
+      </nav>
+    </header>
+
+    <main class="ModelosML_main">
+      <section class="main-header">
+        <h1 class="title">Modelos Machine Learning</h1>
+        <p class="subtitle">Selecciona un modelo para ver más detalles</p>
+      </section>
+
+      <section class="ModelosML">
+        <section class="ModelosML_sidebar">
+          <ul>
+            {% for model in data %}
+              <li>
+                <a href="javascript:void(0);" onclick="toggleDetails('{{ model[0] }}')">
+                  {{ model[1] }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+  
+        <section class="ModelosML_content" id="ModelosML_content">
+          {% for model in data %}
+            <div id="ModelosML_content-details-{{ model[0] }}" class="ModelosML_content-details" style="display:none;">
+              <h2>{{ model[1] }}</h2>
+              <p>{{ model[2] }}</p>
+              <img src="{{ model[4] }}" alt="Gráfico Modelo">
+              <a href="{{ model[3] }}"><strong>Fuente: </strong> {{ model[3] }}</a>
+            </div>
+          {% endfor %}
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
